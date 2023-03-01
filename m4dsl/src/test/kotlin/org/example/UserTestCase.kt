@@ -1,5 +1,7 @@
 package org.example
 
+import org.example.user.dsl.buildUser
+import org.example.user.models.Action
 import org.junit.Test
 import kotlin.test.assertEquals
 
@@ -8,8 +10,8 @@ class UserTestCase {
     fun `test user`() {
         val user = buildUser {
             name {
-                first = "Kirill"
-                last = "Krylov"
+                first = "Alexandr"
+                last = "Lichacheff"
             }
             contacts {
                 email = "email@gmail.com"
@@ -17,10 +19,10 @@ class UserTestCase {
             }
             actions {
                 add(Action.UPDATE)
-                add(Action.ADD)
+                add("ADD")
 
                 +Action.DELETE
-                +Action.READ
+                +"READ"
             }
             availability {
                 monday("11:30")
@@ -28,6 +30,7 @@ class UserTestCase {
             }
         }
 
-        assertEquals("Kirill", user.firstName)
+        println(user)
+        assertEquals("Alexandr", user.firstName)
     }
 }

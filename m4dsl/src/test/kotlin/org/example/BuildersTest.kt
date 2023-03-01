@@ -1,5 +1,8 @@
 package org.example
 
+import org.example.builders.java.BreakfastBuilder
+import org.example.builders.kotlin.Drink
+import org.example.builders.kotlin.breakfast
 import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
@@ -11,11 +14,11 @@ class BuildersTest {
             .withEggs(3)
             .withBacon(true)
             .withTitle("Simple")
-            .withDrink(JDrink.COFFEE)
+            .withDrink(org.example.builders.java.Drink.COFFEE)
             .build()
 
         assertTrue(breakfast.bacon)
-        assertEquals(JDrink.COFFEE, breakfast.drink)
+        assertEquals(org.example.builders.java.Drink.COFFEE, breakfast.drink)
     }
 
     @Test
@@ -24,10 +27,10 @@ class BuildersTest {
             eggs = 3
             bacon = true
             title = "Simple"
-            drink = KDrink.COFFEE
+            drink = Drink.COFFEE
         }
 
         assertTrue(breakfast.bacon)
-        assertEquals(KDrink.COFFEE, breakfast.drink)
+        assertEquals(Drink.COFFEE, breakfast.drink)
     }
 }
