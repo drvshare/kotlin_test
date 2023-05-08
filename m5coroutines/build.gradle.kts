@@ -7,12 +7,13 @@ repositories {
 }
 
 val coroutinesVersion: String by project
+val jacksonVersion: String by project
 
 dependencies {
     implementation(kotlin("stdlib"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
     implementation("com.squareup.okhttp3:okhttp:4.9.3") // http client
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.3") // from string to object
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion") // from string to object
 
     testImplementation(kotlin("test-junit"))
 }
