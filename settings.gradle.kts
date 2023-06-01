@@ -11,3 +11,4 @@ pluginManagement {
 include("m3oop")
 include("m4dsl")
 include("m5coroutines")
+include("m6-channels")
